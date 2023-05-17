@@ -48,3 +48,10 @@ CREATE TABLE invoices(
 
 CREATE INDEX invoices_medical_history ON invoices (medical_history_id ASC);
 
+CREATE TABLE medical_histories_treatments (
+    medical_history_id int refrences medical_histories(id),
+    treatment_id int refrences treatments(id),
+);
+
+CREATE INDEX ON medical_histories_treatments (medical_history_id);
+CREATE INDEX ON medical_histories_treatments (treatment_id);
